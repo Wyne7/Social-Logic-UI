@@ -453,3 +453,25 @@ button {
     grid-template-columns: 1fr;
   }
 }
+
+.daq-annex-note {
+  margin: 0 0 0.9rem;
+  padding: 0.65rem 0.8rem;
+  background: #f8fafc;
+  border-radius: 6px;
+  border-left: 3px solid var(--accent);
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--text);
+}
+
+.daq-annex-note__label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  text-transform: none;
+  letter-spacing: 0.02em;
+  color: var(--accent);
+  margin: 0;
+}

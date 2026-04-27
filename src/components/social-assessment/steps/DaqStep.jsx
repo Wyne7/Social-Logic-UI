@@ -58,6 +58,11 @@ export function DaqStep({
 
         <div id="blockDaqAdult" className={`daq-block ${daqVis.showAdult ? '' : 'is-hidden'}`}>
           <h3>3.1 DAQ (adult)</h3>
+          <div className="daq-annex-note" role="note" aria-labelledby="lbl-daq-annex-adult">
+            <div className="daq-annex-note__label" id="lbl-daq-annex-adult">
+              To refer Annex 1 Disability Assessment Questionnaire
+            </div>
+          </div>
           <p className="hint">
             Scale: 1 = No difficulty · 2 = Some difficulty · 3 = A lot of difficulties · 4 = Cannot do at
             all. Eligible if <strong>any</strong> score is 3 or 4.
