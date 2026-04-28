@@ -172,7 +172,7 @@ export function ProfileStep({ form, onInputChange, showVillageWard, result, isAc
           </div>
         </div>
         <div className="row">
-          <label htmlFor="referrerOrg">Referrer organization</label>
+          <label htmlFor="referrerOrg">Referred organization</label>
           <div className="field">
             <input
               type="text"

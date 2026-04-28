@@ -34,7 +34,8 @@ export function isEligibleTownship(township) {
 
 /**
  * Which DAQ sub-blocks to show for a given age (years), or all hidden if age is missing.
- * 3.1 (adult DAQ) when completed age is **over 5** ({@link parseAge} &gt; 5).
+ * Ages **2–5**: Annex 1 note + 3.3 DAQ only (no 3.1 adult scale in-app).
+ * **Over 5**: 3.1 adult DAQ only (no Annex note in-app).
  * 3.2 when age is **under 2** (0–1). The generic “&lt;2 no branches” notice is off.
  */
 export function getDaqBlockVisibility(age) {
@@ -42,10 +43,11 @@ export function getDaqBlockVisibility(age) {
     return { showAdult: false, showGt2: false, show2to5: false, showNone: false }
   }
   const belowTwo = age < 2
+  const band2to5 = age >= 2 && age <= 5
   return {
     showAdult: age > 5,
     showGt2: belowTwo,
-    show2to5: age >= 2 && age <= 5,
+    show2to5: band2to5,
     showNone: false,
   }
 }
@@ -100,7 +102,7 @@ export function evalIdp(data) {
  * @returns {EligibilityResult}
  */
 export function evalDaqAdult(data) {
-  const ids = ['daq_a1', 'daq_a2', 'daq_a3', 'daq_a4', 'daq_a5']
+  const ids = ['daq_a1', 'daq_a2', 'daq_a3', 'daq_a4', 'daq_a5', 'daq_a6']
   for (const id of ids) {
     if (!val(data, id)) return null
   }

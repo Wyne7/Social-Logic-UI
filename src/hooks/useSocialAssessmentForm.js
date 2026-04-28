@@ -33,6 +33,7 @@ function createInitialForm() {
     daq_a3: '',
     daq_a4: '',
     daq_a5: '',
+    daq_a6: '',
     daq_visible_disability: '',
     daq25_appearance: '',
     daq25_intelligence: '',

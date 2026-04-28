@@ -58,11 +58,6 @@ export function DaqStep({
 
         <div id="blockDaqAdult" className={`daq-block ${daqVis.showAdult ? '' : 'is-hidden'}`}>
           <h3>3.1 DAQ (adult)</h3>
-          <div className="daq-annex-note" role="note" aria-labelledby="lbl-daq-annex-adult">
-            <div className="daq-annex-note__label" id="lbl-daq-annex-adult">
-              To refer Annex 1 Disability Assessment Questionnaire
-            </div>
-          </div>
           <p className="hint">
             Scale: 1 = No difficulty · 2 = Some difficulty · 3 = A lot of difficulties · 4 = Cannot do at
             all. Eligible if <strong>any</strong> score is 3 or 4.
@@ -81,6 +76,10 @@ export function DaqStep({
                 ['daq_a3', 'Difficult walking or climbing steps'],
                 ['daq_a4', 'Difficult remembering or concentrating'],
                 ['daq_a5', 'Difficult with self-care'],
+                [
+                  'daq_a6',
+                  'Using your usual (customary) language, do you have difficulty communicating, for example understanding or being understood?',
+                ],
               ].map(([id, label]) => (
                 <tr key={id}>
                   <td>{label}</td>
@@ -131,6 +130,14 @@ export function DaqStep({
           </div>
           <p className="hint">Eligible if Yes — proceed to section 4.</p>
           <CriteriaBanner result={daqGt2Result} id="resultDaqGt2" />
+        </div>
+
+        <div id="blockDaqAnnex" className={`daq-block ${daqVis.show2to5 ? '' : 'is-hidden'}`}>
+          <div className="daq-annex-note" role="note" aria-labelledby="lbl-daq-annex-25">
+            <div className="daq-annex-note__label" id="lbl-daq-annex-25">
+              To refer Annex 1 Disability Assessment Questionnaire
+            </div>
+          </div>
         </div>
 
         <div id="blockDaq2to5" className={`daq-block ${daqVis.show2to5 ? '' : 'is-hidden'}`}>
